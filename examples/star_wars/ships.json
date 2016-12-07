@@ -1,0 +1,296 @@
+{
+  "data": {
+    "allStarships": {
+      "edges": [
+        {
+          "node": {
+            "name": "CR90 corvette",
+            "cargoCapacity": 3000000,
+            "costInCredits": 3500000,
+            "MGLT": 60
+          }
+        },
+        {
+          "node": {
+            "name": "Star Destroyer",
+            "cargoCapacity": 36000000,
+            "costInCredits": 150000000,
+            "MGLT": 60
+          }
+        },
+        {
+          "node": {
+            "name": "Sentinel-class landing craft",
+            "cargoCapacity": 180000,
+            "costInCredits": 240000,
+            "MGLT": 70
+          }
+        },
+        {
+          "node": {
+            "name": "Death Star",
+            "cargoCapacity": 1000000000000,
+            "costInCredits": 1000000000000,
+            "MGLT": 10
+          }
+        },
+        {
+          "node": {
+            "name": "Millennium Falcon",
+            "cargoCapacity": 100000,
+            "costInCredits": 100000,
+            "MGLT": 75
+          }
+        },
+        {
+          "node": {
+            "name": "Y-wing",
+            "cargoCapacity": 110,
+            "costInCredits": 134999,
+            "MGLT": 80
+          }
+        },
+        {
+          "node": {
+            "name": "X-wing",
+            "cargoCapacity": 110,
+            "costInCredits": 149999,
+            "MGLT": 100
+          }
+        },
+        {
+          "node": {
+            "name": "TIE Advanced x1",
+            "cargoCapacity": 150,
+            "costInCredits": null,
+            "MGLT": 105
+          }
+        },
+        {
+          "node": {
+            "name": "Executor",
+            "cargoCapacity": 250000000,
+            "costInCredits": 1143350000,
+            "MGLT": 40
+          }
+        },
+        {
+          "node": {
+            "name": "Rebel transport",
+            "cargoCapacity": 19000000,
+            "costInCredits": null,
+            "MGLT": 20
+          }
+        },
+        {
+          "node": {
+            "name": "Slave 1",
+            "cargoCapacity": 70000,
+            "costInCredits": null,
+            "MGLT": 70
+          }
+        },
+        {
+          "node": {
+            "name": "Imperial shuttle",
+            "cargoCapacity": 80000,
+            "costInCredits": 240000,
+            "MGLT": 50
+          }
+        },
+        {
+          "node": {
+            "name": "EF76 Nebulon-B escort frigate",
+            "cargoCapacity": 6000000,
+            "costInCredits": 8500000,
+            "MGLT": 40
+          }
+        },
+        {
+          "node": {
+            "name": "Calamari Cruiser",
+            "cargoCapacity": null,
+            "costInCredits": 104000000,
+            "MGLT": 60
+          }
+        },
+        {
+          "node": {
+            "name": "A-wing",
+            "cargoCapacity": 40,
+            "costInCredits": 175000,
+            "MGLT": 120
+          }
+        },
+        {
+          "node": {
+            "name": "B-wing",
+            "cargoCapacity": 45,
+            "costInCredits": 220000,
+            "MGLT": 91
+          }
+        },
+        {
+          "node": {
+            "name": "Republic Cruiser",
+            "cargoCapacity": null,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Droid control ship",
+            "cargoCapacity": 4000000000,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Naboo fighter",
+            "cargoCapacity": 65,
+            "costInCredits": 200000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Naboo Royal Starship",
+            "cargoCapacity": null,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Scimitar",
+            "cargoCapacity": 2500000,
+            "costInCredits": 55000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "J-type diplomatic barge",
+            "cargoCapacity": null,
+            "costInCredits": 2000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "AA-9 Coruscant freighter",
+            "cargoCapacity": null,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Jedi starfighter",
+            "cargoCapacity": 60,
+            "costInCredits": 180000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "H-type Nubian yacht",
+            "cargoCapacity": null,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Republic Assault ship",
+            "cargoCapacity": 11250000,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Solar Sailer",
+            "cargoCapacity": 240,
+            "costInCredits": 35700,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Trade Federation cruiser",
+            "cargoCapacity": 50000000,
+            "costInCredits": 125000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Theta-class T-2c shuttle",
+            "cargoCapacity": 50000,
+            "costInCredits": 1000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Republic attack cruiser",
+            "cargoCapacity": 20000000,
+            "costInCredits": 59000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Naboo star skiff",
+            "cargoCapacity": null,
+            "costInCredits": null,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Jedi Interceptor",
+            "cargoCapacity": 60,
+            "costInCredits": 320000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "arc-170",
+            "cargoCapacity": 110,
+            "costInCredits": 155000,
+            "MGLT": 100
+          }
+        },
+        {
+          "node": {
+            "name": "Banking clan frigte",
+            "cargoCapacity": 40000000,
+            "costInCredits": 57000000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "Belbullab-22 starfighter",
+            "cargoCapacity": 140,
+            "costInCredits": 168000,
+            "MGLT": null
+          }
+        },
+        {
+          "node": {
+            "name": "V-wing",
+            "cargoCapacity": 60,
+            "costInCredits": 102500,
+            "MGLT": null
+          }
+        }
+      ]
+    }
+  }
+}
