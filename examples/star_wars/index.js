@@ -1,7 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BarChart} from '../../index.js'
+import {RowChart} from '../../index.js'
+import ships from './ships.js'
+import crossfilter from 'crossfilter'
+import d3 from 'd3'
 
-const MyChart = (props) => <BarChart />
+const data = crossfilter(ships)
+const byName = data.dimension(ship => ship.name)
+const byMGLT = data.dimension(ship => ship.MGLT)
+const group = byName.group().reduceSum(d => d.MGLT)
+console.log(byMGLT)
 
-ReactDOM.render(<MyChart />, document.getElementById('main'));
+ReactDOM.render(<RowChart dimension={byName} group={group} />, document.getElementById('main'));
