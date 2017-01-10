@@ -9,6 +9,5 @@ const data = crossfilter(ships)
 const byName = data.dimension(ship => ship.name)
 const byMGLT = data.dimension(ship => ship.MGLT)
 const group = byName.group().reduceSum(d => d.MGLT)
-console.log(byMGLT)
 
-ReactDOM.render(<RowChart dimension={byName} group={group} />, document.getElementById('main'));
+ReactDOM.render(<RowChart dimension={byName} group={group} labelOffsetX={18} test="test"/>, document.getElementById('main'));

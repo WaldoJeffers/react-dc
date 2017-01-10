@@ -2,26 +2,13 @@ import React from 'react'
 import dc from 'dc'
 import crossfilter from 'crossfilter2'
 import 'dc/dc.min.css'
+import BaseChart from './src/base-chart'
+import marginMixin from './src/margin-mixin'
+import capMixin from './src/cap-mixin'
+import colorMixin from './src/color-mixin'
+import renderMixin from './src/render-mixin'
 
-class BaseChart extends React.Component{
-  componentDidMount(){
-    this.chart = dc[this.props.type](this.element)
-    this.chart
-      .dimension(this.props.dimension)
-      .group(this.props.group);
 
-    console.log('baseChartDidMount');
-  }
-  render(){
-    return <div ref={element => this.element = element}></div>
-  }
-}
-
-BaseChart.propTypes = {
-  dimension: React.PropTypes.any.isRequired, // TODO
-  group: React.PropTypes.any.isRequired, // TODO
-  type: React.PropTypes.oneOf(['barChart', 'rowChart']).isRequired
-}
 
 /*export class BarChart extends React.Component{
   constructor(){
@@ -67,14 +54,52 @@ export class BarChart extends React.Component{
   }
 }
 
-export class RowChart extends React.Component{
-  componentDidMount(){
-    this.chart.render();
+@renderMixin
+@colorMixin
+@capMixin
+@marginMixin
+class RowChart extends BaseChart{
+  static propTypes = {
+    ...BaseChart.propTypes,
+    elasticX: React.PropTypes.bool,
+    fixedBarHeight: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.number]),  // true or a Number, but not false
+    gap: React.PropTypes.number,
+    labelOffsetX: React.PropTypes.number,
+    labelOffsetY: React.PropTypes.number,
+    x: React.PropTypes.any, // TO DO instance of d3.quantitative.scale ?
+    renderTitleLabel: React.PropTypes.bool,
+    titleLabelOffsetX: React.PropTypes.number
   }
+  componentDidMount(){
+    console.log('constructor.propTypes', this.constructor.propTypes)
+    const chart = dc.rowChart(this.chart);
 
-  render(){
-    return (
-      <BaseChart type="rowChart" {...this.props} ref={coordinateGridMixin => this.chart = coordinateGridMixin.chart} />
-    )
+    Object.keys(this.props).forEach(prop => {
+      if (this.constructor.propTypes[prop]){
+        chart[prop](this.props[prop])
+      }
+    })
+    chart.render();
   }
 }
+
+// RowChart.propTypes = {
+//   elasticX: React.PropTypes.bool,
+//   fixedBarHeight: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.number]),  // true or a Number, but not false
+//   gap: React.PropTypes.number,
+//   labelOffsetX: React.PropTypes.number,
+//   labelOffsetY: React.PropTypes.number,
+//   x: React.PropTypes.any, // TO DO instance of d3.quantitative.scale ?
+//   renderTitleLabel: React.PropTypes.bool,
+//   titleLabelOffsetX: React.PropTypes.number
+// }
+
+
+
+//const RowChart = colorMixin(RChart);
+
+
+
+console.log('RowChart.propTypes', RowChart.propTypes)
+
+export {RowChart}
