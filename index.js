@@ -1,12 +1,6 @@
-import React from 'react'
-import dc from 'dc'
-import crossfilter from 'crossfilter2'
 import 'dc/dc.min.css'
-import BaseChart from './src/base-chart'
-import marginMixin from './src/margin-mixin'
-import capMixin from './src/cap-mixin'
-import colorMixin from './src/color-mixin'
-import renderMixin from './src/render-mixin'
+import RowChart from './src/charts/row-chart'
+import React from 'react'
 
 
 
@@ -54,34 +48,22 @@ export class BarChart extends React.Component{
   }
 }
 
-@renderMixin
-@colorMixin
-@capMixin
-@marginMixin
-class RowChart extends BaseChart{
-  static propTypes = {
-    ...BaseChart.propTypes,
-    elasticX: React.PropTypes.bool,
-    fixedBarHeight: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.number]),  // true or a Number, but not false
-    gap: React.PropTypes.number,
-    labelOffsetX: React.PropTypes.number,
-    labelOffsetY: React.PropTypes.number,
-    x: React.PropTypes.any, // TO DO instance of d3.quantitative.scale ?
-    renderTitleLabel: React.PropTypes.bool,
-    titleLabelOffsetX: React.PropTypes.number
-  }
-  componentDidMount(){
-    console.log('constructor.propTypes', this.constructor.propTypes)
-    const chart = dc.rowChart(this.chart);
 
-    Object.keys(this.props).forEach(prop => {
-      if (this.constructor.propTypes[prop]){
-        chart[prop](this.props[prop])
-      }
-    })
-    chart.render();
-  }
-}
+
+
+
+// const RowChart = capMixin(chartFactory('rowChart', {
+//   elasticX: React.PropTypes.bool,
+//   fixedBarHeight: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.number]),  // true or a Number, but not false
+//   gap: React.PropTypes.number,
+//   labelOffsetX: React.PropTypes.number,
+//   labelOffsetY: React.PropTypes.number,
+//   x: React.PropTypes.any, // TO DO instance of d3.quantitative.scale ?
+//   renderTitleLabel: React.PropTypes.bool,
+//   titleLabelOffsetX: React.PropTypes.number
+// }));
+
+console.log(RowChart.displayName);
 
 // RowChart.propTypes = {
 //   elasticX: React.PropTypes.bool,
@@ -93,7 +75,7 @@ class RowChart extends BaseChart{
 //   renderTitleLabel: React.PropTypes.bool,
 //   titleLabelOffsetX: React.PropTypes.number
 // }
-
+//
 
 
 //const RowChart = colorMixin(RChart);
