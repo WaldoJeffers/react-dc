@@ -1,3 +1,5 @@
+export const compose = (...fns) => (...args) => fns.reduceRight((p, c) => c(p), fns.pop()(...args))
+
 export const intersect = (obj1, obj2) => {
   const o = {};
   Object.entries(keys2).forEach((key, val) => {
@@ -6,4 +8,8 @@ export const intersect = (obj1, obj2) => {
     }
   });
   return o;
+}
+
+export const mixinCreator = (propTypes) => (Component) => class extends Component{
+  static propTypes = {...Component.propTypes, ...propTypes}
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import mixinCreator from './mixin-creator'
+import {mixinCreator} from '../utils'
 
 export default mixinCreator({
   margins: React.PropTypes.shape({

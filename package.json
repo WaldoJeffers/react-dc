@@ -4,6 +4,7 @@
   "description": "React bindings for dc.js charts",
   "main": "index.js",
   "scripts": {
+    "rolling_stone": "webpack-dev-server --inline --content-base examples/rolling_stone --config examples/rolling_stone/webpack.config.js",
     "star_wars": "webpack-dev-server --inline --content-base examples/star_wars --config examples/star_wars/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/WaldoJeffers/react-dc#readme",
   "dependencies": {
-    "dc": "^2.0.0-beta.32"
+    "dc": "^2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",

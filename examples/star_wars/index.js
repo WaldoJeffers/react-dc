@@ -1,13 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {RowChart} from '../../index.js'
-import ships from './ships.js'
+import {PieChart, RowChart} from '../../index'
+import ships from './ships'
+import people from './people'
 import crossfilter from 'crossfilter'
 import d3 from 'd3'
 
-const data = crossfilter(ships)
-const byName = data.dimension(ship => ship.name)
-const byMGLT = data.dimension(ship => ship.MGLT)
-const group = byName.group().reduceSum(d => d.MGLT)
+const data = {
+  people: crossfilter(people),
+  ships: crossfilter(ships)
+};
+const peopleByHomeworld = data.people.dimension(person => person.homeworld.name)
+const peopleByHomeworldGroup = peopleByHomeworld.group().reduceCount()
+const shipsByName = data.ships.dimension(ship => ship.name)
+const shipsByMGLT = data.ships.dimension(ship => ship.MGLT)
+const shipsByNameGroup = shipsByName.group().reduceSum(d => d.MGLT)
 
-ReactDOM.render(<RowChart dimension={byName} group={group} labelOffsetX={18} test="test"/>, document.getElementById('main'));
+const graphs = (
+  <div>
+    <RowChart dimension={shipsByName} group={shipsByNameGroup} labelOffsetX={18} test="test" />
+    <PieChart dimension={peopleByHomeworld} group={peopleByHomeworldGroup} slicesCap="5" />
+  </div>
+)
+
+ReactDOM.render(graphs, document.getElementById('main'));
