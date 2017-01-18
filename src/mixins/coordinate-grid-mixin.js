@@ -1,14 +1,13 @@
 import React from 'react'
-import {compose, mixinCreator} from '../utils'
+import {compose, withProps} from '../utils'
 import colorMixin from './color-mixin'
 import marginMixin from './margin-mixin'
 import baseMixin from './base-mixin'
 import d3 from 'd3'
-console.log(Object.keys(d3.svg.axis()))
 
 const {any, array, arrayOf, bool, func, instanceOf, number, oneOfType, shape, string} = React.PropTypes
 
-const coordinateGridMixin = mixinCreator({
+const coordinateGridMixin = withProps({
   brushOn: bool,
   clipPadding: number,
   elasticX: bool,
@@ -21,28 +20,66 @@ const coordinateGridMixin = mixinCreator({
   round: func,
   useRightYAxis: bool,
   x: any.isRequired, // TO DO : any d3 quantitive scale or ordinal scale
-  xAxis: shape({
-    orient: string,
-    ticks: array,
-    tickValues: arrayOf(oneOfType([number, string, Date])),
-    tickSize: arrayOf(number),
-    innerTickSize: number,
-    outerTickSize: number,
-    tickPadding: number,
-    tickFormat: func
-  }),
-  xAxisLabel: shape({
-    labelText: string,
-    padding: number
-  }),
+  xAxis: {
+    propTypes: shape({
+      orient: string,
+      ticks: array,
+      tickValues: arrayOf(oneOfType([number, string, Date])),
+      tickSize: arrayOf(number),
+      innerTickSize: number,
+      outerTickSize: number,
+      tickPadding: number,
+      tickFormat: func
+    }),
+    setter(method, val){
+      Object.entries(val).forEach(([key, value]) => method()[key](value))
+    }
+  },
+  xAxisLabel: {
+    propTypes: oneOfType([string, shape({
+      labelText: string.isRequired,
+      padding: number.isRequired
+    })]),
+    setter(method, val){
+      if (val.labelText && val.padding){
+        method(val.labelText, val.padding)
+      }else{
+        method(val)
+      }
+    }
+  },
   xAxisPadding: oneOfType([number, string]),
   xAxisUnit: string,
   y: any, // TO DO : d3 scale
   xUnits: func,
-  yAxisLabel: shape({
-    labelText: string,
-    padding: number
-  }),
+  yAxis: {
+    propTypes: shape({
+      orient: string,
+      ticks: array,
+      tickValues: arrayOf(oneOfType([number, string, Date])),
+      tickSize: arrayOf(number),
+      innerTickSize: number,
+      outerTickSize: number,
+      tickPadding: number,
+      tickFormat: func
+    }),
+    setter(method, val){
+      Object.entries(val).forEach((key, value) => method()[key](value))
+    }
+  },
+  yAxisLabel:  {
+    propTypes: oneOfType([string, shape({
+      labelText: string.isRequired,
+      padding: number.isRequired
+    })]),
+    setter(method, val){
+      if (val.labelText && val.padding){
+        method(val.labelText, val.padding)
+      }else{
+        method(val)
+      }
+    }
+  },
   yAxisPadding: oneOfType([number, string]),
   zoomOutRestrict: bool,
   zoomScale: oneOfType([arrayOf(number), arrayOf(instanceOf(Date))])

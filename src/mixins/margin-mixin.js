@@ -1,7 +1,7 @@
 import React from 'react'
-import {mixinCreator} from '../utils'
+import {withProps} from '../utils'
 
-export default mixinCreator({
+export default withProps({
   margins: React.PropTypes.shape({
     left: React.PropTypes.number.isRequired,
     right: React.PropTypes.number.isRequired,

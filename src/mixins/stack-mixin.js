@@ -1,18 +1,46 @@
 import React from 'react'
-import {mixinCreator} from '../utils'
+import {withProps} from '../utils'
 
-const {any, arrayOf, bool, func, shape, string} = React.PropTypes
+const {arrayOf, bool, func, oneOfType, shape, string} = React.PropTypes
 
-export default mixinCreator({
+const groupShape = shape({
+  all : func
+})
+
+const stackShape = shape({
+  group: groupShape.isRequired,
+  name: string,
+  accessor: func
+})
+
+const stackType = oneOfType([groupShape, stackShape])
+
+export default withProps({
   hidableStacks: bool,
-  stack: arrayOf(shape({
-    group: any.isRequired,
-    name: string,
-    accessor: func
-  })),
+  stack: {
+    propTypes: oneOfType([
+      stackType,
+      arrayOf(stackType)
+    ]),
+    setter(method, val){
+      const stacks = [].concat(val)
+      stacks.forEach(stack => {
+        if (stack.group && stack.name && stack.accessor){
+          method(stack.group, stack.name, stack.accessor)
+        }else{
+          method(stack)
+        }
+      })
+    }
+  },
   stackLayout: func,
-  title: shape({
-    stackName: string,
-    titleAccessor: func
-  })
+  title: {
+    propTypes: shape({
+      stackName: string,
+      titleAccessor: func
+    }),
+    setter(method, val){
+      method(val.stackName, val.titleAccessor)
+    }
+  }
 })

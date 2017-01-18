@@ -1,7 +1,7 @@
 import React from 'react'
-import {mixinCreator} from '../utils'
+import {withProps} from '../utils'
 
-export default mixinCreator({
+export default withProps({
   colorAccessor: React.PropTypes.func,
   colorDomain: React.PropTypes.arrayOf(React.PropTypes.string),
   colors: React.PropTypes.func, // TO DO : shape a scale

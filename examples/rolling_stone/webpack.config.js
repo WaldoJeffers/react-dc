@@ -15,6 +15,10 @@ module.exports = {
       {
         test: /\.css/, // TO DO MOVE THIS TO THE MODULE'S webpack config, not this example !!!
         loaders: ['style', 'css']
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },

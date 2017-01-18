@@ -1,4 +1,4 @@
-export const compose = (...fns) => (...args) => fns.reduceRight((p, c) => c(p), fns.pop()(...args))
+export const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)))
 
 export const intersect = (obj1, obj2) => {
   const o = {};
@@ -10,6 +10,28 @@ export const intersect = (obj1, obj2) => {
   return o;
 }
 
-export const mixinCreator = (propTypes) => (Component) => class extends Component{
-  static propTypes = {...Component.propTypes, ...propTypes}
+// map over the object and make sure each value is a React PropType
+const extractPropTypes = (props) => Object.entries(props).reduce((acc, [prop, val]) => {
+  acc[prop] = (val.propTypes) ? val.propTypes : val
+  return acc
+}, {})
+
+export const withProps = (propTypes) => (Component) => class extends Component{
+  static propTypes = {...Component.propTypes, ...extractPropTypes(propTypes)}
+
+  configure(){
+    if (super.configure){
+      super.configure()
+    }
+    Object.entries(this.props).forEach(([prop, val]) => {
+      if(prop === 'renderArea') console.log(propTypes)
+      if (propTypes[prop]){
+        if (propTypes[prop].setter){
+          propTypes[prop].setter(this.chart[prop], val)
+        }else{
+          this.chart[prop](val)
+        }
+      }
+    })
+  }
 }
