@@ -24,7 +24,6 @@ export const withProps = (propTypes) => (Component) => class extends Component{
       super.configure()
     }
     Object.entries(this.props).forEach(([prop, val]) => {
-      if(prop === 'renderArea') console.log(propTypes)
       if (propTypes[prop]){
         if (propTypes[prop].setter){
           propTypes[prop].setter(this.chart[prop], val)

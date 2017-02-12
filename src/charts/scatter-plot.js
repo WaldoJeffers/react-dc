@@ -2,17 +2,16 @@ import React from 'react'
 import dc from 'dc'
 import BaseChart from './base-chart'
 import coordinateGridMixin from '../mixins/coordinate-grid-mixin'
-import stackMixin from '../mixins/stack-mixin'
-import barMixin from '../mixins/bar-mixin'
+import scatterMixin from '../mixins/scatter-mixin'
 
-@barMixin
-@stackMixin
+@scatterMixin
 @coordinateGridMixin
-export default class BarChart extends BaseChart{
-  static displayName = 'BarChart'
+export default class ScatterPlot extends BaseChart{
+  static displayName = 'ScatterPlot'
 
   componentDidMount(){
-    this.chart = dc.barChart(this.chart)
+    console.log('scatter')
+    this.chart = dc.scatterPlot(this.chart)
     this.configure()
     this.chart.render()
   }

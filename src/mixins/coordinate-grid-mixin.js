@@ -64,7 +64,7 @@ const coordinateGridMixin = withProps({
       tickFormat: func
     }),
     setter(method, val){
-      Object.entries(val).forEach((key, value) => method()[key](value))
+      Object.entries(val).forEach(([key, value]) => method()[key](value))
     }
   },
   yAxisLabel:  {
