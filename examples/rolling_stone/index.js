@@ -24,17 +24,11 @@ const byArtistAndYearGroupTop10 = {
   all: () => byArtistAndYearGroup.all().filter(d => top10Artists.includes(d.key[0]))
 }
 
-console.log(byArtistAndYearGroupTop10.all())
-
 const rockByYearGroup = byYear.group().reduceSum(album => (album.genres.includes('Rock')) ? 1 : 0)
 const popByYearGroup = byYear.group().reduceSum(album => (album.genres.includes('Pop')) ? 1 : 0)
 const funkSoulByYearGroup = byYear.group().reduceSum(album => (album.genres.includes('Funk / Soul')) ? 1 : 0)
 const electroByYearGroup = byYear.group().reduceSum(album => (album.genres.includes('Electronic')) ? 1 : 0)
 const hipHopByYearGroup = byYear.group().reduceSum(album => (album.genres.includes('Hip Hop')) ? 1 : 0)
-
-const byArtistGroupTop20 = {
-  all: () => byArtistGroup.top(20)
-}
 
 const graphs = (
   <div>
@@ -60,25 +54,40 @@ const graphs = (
       xUnits={d3.time.years}
       ordinalColors={colors}
     />
-    <h3>Genre evolution by year</h3>
-    <LineChart
-      dimension={byYear}
-      group={rockByYearGroup}
-      x={d3.time.scale()}
-      renderHorizontalGridLines={true}
-      elasticX={true}
-      xUnits={d3.time.years}
-      renderArea={true}
-      stack={[popByYearGroup, funkSoulByYearGroup, electroByYearGroup, hipHopByYearGroup]}
-      xyTipsOn={true}
-      brushOn={false}
-      ordinalColors={colors}
-    />
+    <h3>Genres</h3>
+    <div>
+      <div style={{float: 'left', width: 'calc(100% - 300px)'}}>
+        <LineChart
+          dimension={byYear}
+          group={rockByYearGroup}
+          x={d3.time.scale()}
+          renderHorizontalGridLines={true}
+          elasticX={true}
+          xUnits={d3.time.years}
+          renderArea={true}
+          stack={[popByYearGroup, funkSoulByYearGroup, electroByYearGroup, hipHopByYearGroup]}
+          xyTipsOn={true}
+          brushOn={false}
+          ordinalColors={colors}
+        />
+      </div>
+      <div style={{float: 'left'}}>
+        <PieChart
+          dimension={byGenre}
+          group={byGenreGroup}
+          slicesCap={5}
+          ordering={d => -d.value}
+          ordinalColors={colors}
+          height={180}
+        />
+      </div>
+      <div style={{clear: 'both'}}></div>
+    </div>
     <h3>Albums by artist and year</h3>
     <SeriesChart
       dimension={byArtistAndYear}
       group={byArtistAndYearGroupTop10}
-      x={d3.time.scale().domain([new Date(1955, 0, 1), Date.now()])}
+      x={d3.time.scale().domain([new Date(1955, 0, 1), new Date(2011, 0 , 1)])}
       xUnits={d3.time.years}
       keyAccessor={record => record.key[1]}
       seriesAccessor={record => record.key[0]}
@@ -96,11 +105,7 @@ const graphs = (
       height={500}
     >
     </SeriesChart>
-    <PieChart
-      dimension={byGenre}
-      group={byGenreGroup}
-      slicesCap={5}
-    />
+
   </div>
 )
 

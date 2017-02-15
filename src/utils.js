@@ -12,7 +12,7 @@ export const intersect = (obj1, obj2) => {
 
 // map over the object and make sure each value is a React PropType
 const extractPropTypes = (props) => Object.entries(props).reduce((acc, [prop, val]) => {
-  acc[prop] = (val.propTypes) ? val.propTypes : val
+  acc[prop] =  val.propTypes || val
   return acc
 }, {})
 

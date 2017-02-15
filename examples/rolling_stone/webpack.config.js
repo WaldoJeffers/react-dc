@@ -6,19 +6,15 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        use: ['babel-loader']
       },
       {
         test: /\.css/, // TO DO MOVE THIS TO THE MODULE'S webpack config, not this example !!!
-        loaders: ['style', 'css']
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
