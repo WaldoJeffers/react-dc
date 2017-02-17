@@ -1,19 +1,29 @@
 module.exports = {
-  entry: './index.js',
+  entry: './src/react-dc.js',
 
   output: {
-    library: 'ReactDc',
-    libraryTarget: 'umd',
     filename: 'react-dc.js',
     path: 'dist'
   },
 
+  externals: {
+    react: 'react',
+    dc: 'dc'
+  },
+
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader',
+        options: {
+          forceEnv: 'browser'
+        }
+      },
+      {
+        test: /\.css/, // TO DO MOVE THIS TO THE MODULE'S webpack config, not this example !!!
+        use: ['css-loader']
       }
     ]
   },

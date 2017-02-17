@@ -3,7 +3,6 @@ import {compose, withProps} from '../utils'
 import colorMixin from './color-mixin'
 import marginMixin from './margin-mixin'
 import baseMixin from './base-mixin'
-import d3 from 'd3'
 
 const {any, array, arrayOf, bool, func, instanceOf, number, oneOfType, shape, string} = React.PropTypes
 
