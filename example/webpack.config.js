@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './examples/rolling_stone/index.js',
+  entry: './example/index.js',
 
   output: {
     filename: 'bundle.js'
@@ -10,7 +10,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        loader: 'babel-loader',
+        options: {
+          forceEnv: 'browser'
+        }
       },
       {
         test: /\.css/, // TO DO MOVE THIS TO THE MODULE'S webpack config, not this example !!!

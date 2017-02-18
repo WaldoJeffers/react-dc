@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BarChart, LineChart, PieChart, RowChart, ScatterPlot, SeriesChart} from '../../index'
+import {BarChart, LineChart, PieChart, RowChart, ScatterPlot, SeriesChart} from '../src/react-dc'
 import albums from './albums'
 import crossfilter from 'crossfilter'
 import d3 from 'd3'
