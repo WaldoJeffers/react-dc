@@ -3,7 +3,7 @@ module.exports = {
 
   output: {
     filename: 'react-dc.js',
-    path: 'dist'
+    path: 'dist/browser'
   },
 
   externals: {
