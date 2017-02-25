@@ -6,7 +6,9 @@ React-dc is a wrapper around [dc.js charts](http://dc-js.github.io/dc.js/) for R
 ## Table of contents
 * [Installation](https://github.com/WaldoJeffers/react-dc#installation)
 * [Usage](https://github.com/WaldoJeffers/react-dc#usage)
-* Full documentation
+* [Components](https://github.com/WaldoJeffers/react-dc#components)
+* [FAQ](https://github.com/WaldoJeffers/react-dc#faq)
+* Full documentation *(coming soon)*
 
 ## Installation
 
@@ -54,4 +56,5 @@ export default () => <BarChart dimension={dimension} group={dimension} />
 
 ## FAQ
 **Is React-dc production ready ?**
+
 Not yet. This library is being actively developed, and needs to be thoroughly tested before being production-ready. However, you can use for a personal project. If you encounter any bug, please open an issue.
