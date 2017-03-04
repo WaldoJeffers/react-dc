@@ -17,16 +17,13 @@ React-dc is a wrapper around [dc.js charts](http://dc-js.github.io/dc.js/) for R
 npm install --save react-dc
 ```
 
-You will also need [React](https://www.npmjs.com/package/react), which is a [peer dependency](https://nodejs.org/en/blog/npm/peer-dependencies/) of this library. The reasoning behind this is that you are probably already using React in your project, and don't want to up with two versions of React in your final bundle. If you haven't already installed React, run:
-```
-npm install --save react
-```
-
 ### Without npm
 An UMD build is available on [unpkg](https://unpkg.com):
 ```html
 <script src="https://unpkg.com/react-dc"></script>
 ```
+
+**Warning:** You will also need [React](https://www.npmjs.com/package/react), which is a [peer dependency](https://nodejs.org/en/blog/npm/peer-dependencies/) of this library. The reasoning behind this is that you are probably already using React in your project, and don't want to end up with two versions of React in your final bundle. If you haven't already installed React, you can install it from npm with `npm install --save react`, or use a [CDN version](https://cdnjs.com/libraries/react/).
 
 ## Usage
 React-js comes with two versions: an UMD ES5 build, and an ES6 module version to allow for a better integration with your module bundler (like [Webpack](https://webpack.js.org/) or [Rollup](http://rollupjs.org/)), if you use one. Rollup has a [great article on this topic on their wiki](https://github.com/rollup/rollup/wiki/pkg.module).
