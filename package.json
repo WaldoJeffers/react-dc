@@ -1,6 +1,6 @@
 {
   "name": "react-dc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React bindings for dc.js charts",
   "main": "dist/browser/react-dc.js",
   "browser": "dist/react-dc.js",
