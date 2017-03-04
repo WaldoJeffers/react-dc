@@ -1,4 +1,3 @@
-import 'dc/dc.min.css'
 import './react-dc.css'
 import BarChart from './charts/bar-chart'
 import LineChart from './charts/line-chart'

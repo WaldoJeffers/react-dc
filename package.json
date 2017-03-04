@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "React bindings for dc.js charts",
   "main": "dist/browser/react-dc.js",
-  "browser": "dist/browser/react-dc.js",
+  "browser": "dist/react-dc.js",
   "module": "dist/module/react-dc.js",
   "jsnext:main": "dist/module/react-dc.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "crossfilter2": "^1.4.0-alpha.6",
     "css-loader": "^0.26.1",
     "d3": "^3.5.17",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "json-loader": "^0.5.4",
     "react-dom": "^15.4.1",
     "style-loader": "^0.13.1",
