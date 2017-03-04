@@ -29,7 +29,7 @@ An UMD build is available on [unpkg](https://unpkg.com):
 ```
 
 ## Usage
-React-js comes with two versions: an UMD ES5 build, and an ES6 module version to allow for a better integration with your module bundler (like [Webkpack](https://webpack.js.org/) or [Rollup](http://rollupjs.org/)), if you use one. Rollup has a [great article on this topic on their wiki](https://github.com/rollup/rollup/wiki/pkg.module).
+React-js comes with two versions: an UMD ES5 build, and an ES6 module version to allow for a better integration with your module bundler (like [Webpack](https://webpack.js.org/) or [Rollup](http://rollupjs.org/)), if you use one. Rollup has a [great article on this topic on their wiki](https://github.com/rollup/rollup/wiki/pkg.module).
 
 ### In an ES6 environment
 ```js
@@ -57,4 +57,4 @@ export default () => <BarChart dimension={dimension} group={dimension} />
 ## FAQ
 **Is React-dc production ready ?**
 
-Not yet. This library is being actively developed, and needs to be thoroughly tested before being production-ready. However, you can use for a personal project. If you encounter any bug, please open an issue.
+Not yet. This library is still being actively developed, and needs to be thoroughly tested before being production-ready. However, you can use it for a personal project. If you encounter any bug, please open an issue.
