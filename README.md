@@ -39,15 +39,29 @@ The library is available as a global variable: **react-dc**
 ## Charts
 ### BarChart
 ```js
-import {BarChart} from 'react-dc'
+import React from 'react'
+import d3 from 'd3'
 import crossfilter from 'crossfilter'
+import {BarChart} from 'react-dc'
 
 const records = [{x: 0, y: 1}, {x: 1, y: 3}, {x: 2, y: 5}, {x: 3, y: 1}, {x: 4, y: 2}]
 const data = crossfilter(records)
 const dimension = data.dimension(record => record.x)
 const group = dimenion.group().reduceSum(record => record.y)
 
-export default () => <BarChart dimension={dimension} group={dimension} />
+export default () => <BarChart dimension={dimension} group={group} x={d3.scale.linear().domain([0, 5])} />
+```
+
+## Common issues
+When using Webpack, you might see the following error in your console `Module not found: Error: Can't resolve 'crossfilter'` or `Uncaught Error: Cannot find module "crossfilter"`. This issue is **not** a problem with `react-dc` itself. This is due to dc.js' use of a library called [crossfilter2](https://www.npmjs.com/package/crossfilter2), which is a fork of [crossfilter](https://www.npmjs.com/package/crossfilter). See [this issue](https://github.com/dc-js/dc.js/issues/1214) for more information. It can be fixed using [Webpack's resolve feature](https://webpack.js.org/configuration/resolve) :
+```js
+{
+  resolve: {
+    alias: {
+     'crossfilter': 'crossfilter2'
+    }
+  }
+}
 ```
 
 
