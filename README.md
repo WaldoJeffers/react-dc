@@ -36,7 +36,7 @@ import {BarChart, PieChart, RowChart} from 'react-dc'
 ```
 
 ### In an ES5 environment
-The library is available as a global variable: **react-dc**
+The library is available as a global variable: **ReactDc**
 
 ## Charts
 ### BarChart
