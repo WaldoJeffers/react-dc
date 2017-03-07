@@ -18,12 +18,7 @@ module.exports = {
       amd: 'react',
       root: 'React'
     }
-    dc: {
-      commonjs: 'dc',
-      commonjs2: 'dc',
-      amd: 'dc',
-      root: 'dc'
-    }
+    dc: 'react'
   },
 
   module: {
