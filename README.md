@@ -1,6 +1,6 @@
 # React-dc
 
-React-dc is a wrapper around [dc.js charts](http://dc-js.github.io/dc.js/) for React. Dc.js is an awesome library , but like many charting libraries, its API is imperative, meaning you have to select a DOM element by its id to transform it into a chart. The goal of this library is to make it very easy for you create and use dc.js charts as React components.
+React-dc is a wrapper around [dc.js charts](http://dc-js.github.io/dc.js/) for React. Dc.js is an awesome library, but like many charting libraries, its API is imperative, meaning you have to select a DOM element by its id to transform it into a chart. The goal of this library is to make it very easy for you create and use dc.js charts as React components.
 
 
 ## Table of contents

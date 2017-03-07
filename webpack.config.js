@@ -12,8 +12,18 @@ module.exports = {
   },
 
   externals: {
-    react: 'React',
-    dc: 'dc'
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React'
+    }
+    dc: {
+      commonjs: 'dc',
+      commonjs2: 'dc',
+      amd: 'dc',
+      root: 'dc'
+    }
   },
 
   module: {
