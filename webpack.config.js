@@ -12,7 +12,7 @@ module.exports = {
   },
 
   externals: {
-    react: 'React',
+    react: 'react',
     dc: 'dc'
   },
 
