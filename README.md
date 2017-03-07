@@ -6,8 +6,10 @@ React-dc is a wrapper around [dc.js charts](http://dc-js.github.io/dc.js/) for R
 ## Table of contents
 * [Installation](https://github.com/WaldoJeffers/react-dc#installation)
 * [Usage](https://github.com/WaldoJeffers/react-dc#usage)
-* [Components](https://github.com/WaldoJeffers/react-dc#components)
-* [FAQ](https://github.com/WaldoJeffers/react-dc#faq)
+* [Charts](https://github.com/WaldoJeffers/react-dc#charts)
+* [Roadmap](https://github.com/WaldoJeffers/react-dc#roadmap)
+* [Common issues](https://github.com/WaldoJeffers/react-dc#common-issues)
+* [FAQ](#faq)
 * Full documentation *(coming soon)*
 
 ## Installation
@@ -51,6 +53,31 @@ const group = dimenion.group().reduceSum(record => record.y)
 
 export default () => <BarChart dimension={dimension} group={group} x={d3.scale.linear().domain([0, 5])} />
 ```
+
+## Roadmap
+- [] Document all components (charts)
+- [] Add a component for every dc chart
+  - [x] BarChart
+  - [x] BaseChart
+  - [] BoxPlot
+  - [] BubbleChart
+  - [] BubbleOverlay
+  - [] DataCount
+  - [] DataGrid
+  - [] DataTable
+  - [x] CompositeChart
+  - [] GeoChoroplethChart
+  - [] Heatmap
+  - [x] LineChart
+  - [] NumberDisplay
+  - [x] PieChart
+  - [x] RowChart
+  - [x] ScatterPlot
+  - [] SelectMenu
+  - [x] SeriesChart
+- [] Make sure charts are properly re-rendered when props change
+- [] Make charts responsive
+
 
 ## Common issues
 When using Webpack, you might see the following error in your console `Module not found: Error: Can't resolve 'crossfilter'` or `Uncaught Error: Cannot find module "crossfilter"`. This issue is **not** a problem with `react-dc` itself. This is due to dc.js' use of a library called [crossfilter2](https://www.npmjs.com/package/crossfilter2), which is a fork of [crossfilter](https://www.npmjs.com/package/crossfilter). See [this issue](https://github.com/dc-js/dc.js/issues/1214) for more information. It can be fixed using [Webpack's resolve feature](https://webpack.js.org/configuration/resolve) :
