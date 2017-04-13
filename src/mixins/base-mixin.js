@@ -33,7 +33,7 @@ export default withProps({
     })]).isRequired,
     setter: (method, val) => (val.group && val.name) ? method(val.group, val.name) : method(val)
   },
-  height: number,
+  height: oneOfType([func, number]),
   ordering: func,
   title: func,
   valueAccessor: func,
