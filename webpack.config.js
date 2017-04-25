@@ -8,7 +8,7 @@ module.exports = {
     library: 'ReactDc',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    path: 'dist'
+    path: 'dist/browser'
   },
 
   externals: {
