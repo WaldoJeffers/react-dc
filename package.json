@@ -3,7 +3,6 @@
   "version": "1.0.5",
   "description": "React bindings for dc.js charts",
   "main": "dist/browser/react-dc.js",
-  "browser": "dist/browser/react-dc.js",
   "module": "dist/react-dc.js",
   "jsnext:main": "dist/react-dc.js",
   "scripts": {

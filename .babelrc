@@ -1,7 +1,8 @@
 {
   "env": {
     "module": {
-      "plugins": ["transform-class-properties", "transform-decorators-legacy", "transform-object-rest-spread", "syntax-jsx"]
+      "presets": ["react"],
+      "plugins": ["transform-class-properties", "transform-decorators-legacy", "transform-object-rest-spread"]
     },
     "browser": {
       "presets": ["es2015", "react"],
