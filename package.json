@@ -2,13 +2,14 @@
   "name": "react-dc",
   "version": "1.0.5",
   "description": "React bindings for dc.js charts",
-  "main": "dist/browser/react-dc.js",
-  "module": "dist/react-dc.js",
-  "jsnext:main": "dist/react-dc.js",
+  "main": "dist/react-dc.js",
+  "module": "dist/module/react-dc.js",
+  "jsnext:main": "dist/module/react-dc.js",
   "scripts": {
-    "build": "npm run build-browser && npm run build-module",
-    "build-browser": "webpack",
-    "build-module": "cross-env BABEL_ENV=module babel src -d dist",
+    "build": "npm run build:browser && npm run build:module && npm run build:css",
+    "build:browser": "webpack",
+    "build:css": "node-sass src/react-dc.scss dist/react-dc.css",
+    "build:module": "cross-env BABEL_ENV=module babel src -d dist/module",
     "prepublish": "npm run build",
     "start": "webpack-dev-server --inline --content-base example --config example/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -46,11 +47,11 @@
     "css-loader": "^0.26.1",
     "d3": "^3.5.17",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
-    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.2",
     "react-dom": "^15.4.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "peerDependencies": {
     "react": "^15.0.1"

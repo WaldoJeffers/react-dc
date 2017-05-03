@@ -16,7 +16,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css/, // TO DO MOVE THIS TO THE MODULE'S webpack config, not this example !!!
+        test: /\.css/,
         use: ['style-loader', 'css-loader']
       }
     ]
@@ -24,7 +24,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      crossfilter: 'crossfilter2' // TO DO : REMOVE THIS
+      crossfilter: 'crossfilter2'
     }
   }
 };
