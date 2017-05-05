@@ -23,6 +23,7 @@ npm install --save react-dc
 An UMD build is available on [unpkg](https://unpkg.com):
 ```html
 <script src="https://unpkg.com/react-dc"></script>
+<link rel="stylesheet" src="https://unpkg.com/react-dc/dist/react-dc.css">
 ```
 
 **Warning:** You will also need [React](https://www.npmjs.com/package/react), which is a [peer dependency](https://nodejs.org/en/blog/npm/peer-dependencies/) of this library. The reasoning behind this is that you are probably already using React in your project, and don't want to end up with two versions of React in your final bundle. If you haven't already installed React, you can install it from npm with `npm install --save react`, or use a [CDN version](https://cdnjs.com/libraries/react/).
@@ -33,6 +34,7 @@ React-js comes with two versions: an UMD ES5 build, and an ES6 module version to
 ### In an ES6 environment
 ```js
 import {BarChart, PieChart, RowChart} from 'react-dc'
+import '~react-dc/react-dc.css'
 ```
 
 ### In an ES5 environment
