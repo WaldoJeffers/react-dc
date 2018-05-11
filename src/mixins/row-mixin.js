@@ -1,7 +1,6 @@
 import React from 'react'
+import {any, bool, number, oneOfType} from 'prop-types'
 import {withProps} from '../utils'
-
-const {any, bool, number, oneOfType} = React.PropTypes
 
 export default withProps({
   elasticX: bool,

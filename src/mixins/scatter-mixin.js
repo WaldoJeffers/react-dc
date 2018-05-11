@@ -1,7 +1,6 @@
 import React from 'react'
+import {bool, func, number, oneOfType, string} from 'prop-types'
 import {withProps} from '../utils'
-
-const {bool, func, number, oneOfType, string} = React.PropTypes
 
 export default withProps({
   emptySize: number,

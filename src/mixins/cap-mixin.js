@@ -1,7 +1,6 @@
 import React from 'react'
+import {func, bool, number, oneOfType, string} from 'prop-types'
 import {withProps} from '../utils'
-
-const {func, bool, number, oneOfType, string} = React.PropTypes
 
 export default withProps({
   cap: number,
