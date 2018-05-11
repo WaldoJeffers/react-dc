@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/WaldoJeffers/react-dc#readme",
   "dependencies": {
-    "dc": "^2.0.0"
+    "dc": "^2.0.0",
+    "prop-types": "15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -48,12 +49,13 @@
     "d3": "^3.5.17",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "node-sass": "^4.5.2",
-    "react-dom": "^15.4.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "style-loader": "^0.13.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
   },
   "peerDependencies": {
-    "react": "^15.0.1"
+    "react": "^16.3.2"
   }
 }
