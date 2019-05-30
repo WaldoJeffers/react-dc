@@ -5,8 +5,6 @@ import coordinateGridMixin from '../mixins/coordinate-grid-mixin'
 import stackMixin from '../mixins/stack-mixin'
 import lineMixin from '../mixins/line-mixin'
 
-const {arrayOf, bool, func, number, oneOfType, shape, string} = React.PropTypes
-
 @stackMixin
 @coordinateGridMixin
 @lineMixin

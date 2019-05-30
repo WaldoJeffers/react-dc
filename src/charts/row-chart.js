@@ -7,8 +7,6 @@ import capMixin from '../mixins/cap-mixin'
 import colorMixin from '../mixins/color-mixin'
 import rowMixin from '../mixins/row-mixin'
 
-const {any, bool, number, oneOfType} = React.PropTypes
-
 @rowMixin
 @colorMixin
 @capMixin

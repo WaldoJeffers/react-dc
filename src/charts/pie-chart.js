@@ -6,8 +6,6 @@ import capMixin from '../mixins/cap-mixin'
 import colorMixin from '../mixins/color-mixin'
 import pieMixin from '../mixins/pie-mixin'
 
-const {bool, number, string} = React.PropTypes
-
 @pieMixin
 @colorMixin
 @capMixin
