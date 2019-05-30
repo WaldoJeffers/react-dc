@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/WaldoJeffers/react-dc#readme",
   "dependencies": {
-    "dc": "^2.0.0"
+    "dc": "^2.0.0",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
