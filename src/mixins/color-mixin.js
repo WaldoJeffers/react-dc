@@ -1,7 +1,6 @@
 import React from 'react'
+import {arrayOf, func, number, string} from 'prop-types'
 import {withProps} from '../utils'
-
-const {arrayOf, func, number, string} = React.PropTypes
 
 export default withProps({
   colorAccessor: func,

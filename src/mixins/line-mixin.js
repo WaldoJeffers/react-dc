@@ -1,7 +1,6 @@
 import React from 'react'
+import {arrayOf, bool, func, number, oneOfType, shape, string} from 'prop-types'
 import {withProps} from '../utils'
-
-const {arrayOf, bool, func, number, oneOfType, shape, string} = React.PropTypes
 
 export default withProps({
   dashStyle: arrayOf(number),
