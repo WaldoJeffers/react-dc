@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {withProps} from '../utils'
 
-const {bool, number, string} = React.PropTypes
+const {bool, number, string} = PropTypes
 
 export default withProps({
   cx: number,

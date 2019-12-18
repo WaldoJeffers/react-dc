@@ -1,5 +1,6 @@
 import React from 'react'
 import dc from 'dc'
+import PropTypes from 'prop-types'
 import BaseChart from './base-chart'
 import baseMixin from '../mixins/base-mixin'
 import marginMixin from '../mixins/margin-mixin'
@@ -7,7 +8,7 @@ import capMixin from '../mixins/cap-mixin'
 import colorMixin from '../mixins/color-mixin'
 import rowMixin from '../mixins/row-mixin'
 
-const {any, bool, number, oneOfType} = React.PropTypes
+const {any, bool, number, oneOfType} = PropTypes
 
 @rowMixin
 @colorMixin

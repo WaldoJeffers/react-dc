@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {withProps} from '../utils'
 
-const {any, bool, func, number, object, oneOfType, shape, string} = React.PropTypes
+const {any, bool, func, number, object, oneOfType, shape, string} = PropTypes
 
 const groupShape = shape({
   all : func
