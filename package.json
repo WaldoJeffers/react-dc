@@ -25,6 +25,9 @@
     "crossfilter"
   ],
   "author": "WaldoJeffers",
+  "contributors": [
+    "Kiran Mathew Mohan <privateOmega@protonmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/WaldoJeffers/react-dc/issues"
