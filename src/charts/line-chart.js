@@ -8,10 +8,9 @@ import lineMixin from '../mixins/line-mixin'
 
 const {arrayOf, bool, func, number, oneOfType, shape, string} = PropTypes
 
-@stackMixin
-@coordinateGridMixin
-@lineMixin
-export default class LineChart extends BaseChart{
+export default
+@stackMixin @coordinateGridMixin @lineMixin
+class LineChart extends BaseChart{
   static displayName = 'LineChart'
 
   componentDidMount(){

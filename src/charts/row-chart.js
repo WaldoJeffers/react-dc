@@ -10,12 +10,9 @@ import rowMixin from '../mixins/row-mixin'
 
 const {any, bool, number, oneOfType} = PropTypes
 
-@rowMixin
-@colorMixin
-@capMixin
-@marginMixin
-@baseMixin
-export default class RowChart extends BaseChart{
+export default
+@rowMixin @colorMixin @capMixin @marginMixin @baseMixin
+class RowChart extends BaseChart{
   static displayName = 'RowChart'
 
   componentDidMount(){

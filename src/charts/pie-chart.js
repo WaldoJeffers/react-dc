@@ -9,11 +9,9 @@ import pieMixin from '../mixins/pie-mixin'
 
 const {bool, number, string} = PropTypes
 
-@pieMixin
-@colorMixin
-@capMixin
-@baseMixin
-export default class PieChart extends BaseChart{
+export default
+@pieMixin @colorMixin @capMixin @baseMixin
+class PieChart extends BaseChart{
   static displayName = 'PieChart'
 
   componentDidMount(){

@@ -8,8 +8,9 @@ import stackMixin from '../mixins/stack-mixin'
 
 const {arrayOf, bool, instanceOf, number, object, string} = PropTypes
 
+export default
 @coordinateGridMixin
-export default class CompositeChart extends BaseChart{
+class CompositeChart extends BaseChart{
   static displayName = 'CompositeChart'
 
   componentDidMount(){
