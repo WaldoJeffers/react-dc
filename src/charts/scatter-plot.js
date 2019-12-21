@@ -4,9 +4,9 @@ import BaseChart from './base-chart'
 import coordinateGridMixin from '../mixins/coordinate-grid-mixin'
 import scatterMixin from '../mixins/scatter-mixin'
 
-@scatterMixin
-@coordinateGridMixin
-export default class ScatterPlot extends BaseChart{
+export default
+@scatterMixin @coordinateGridMixin
+class ScatterPlot extends BaseChart{
   static displayName = 'ScatterPlot'
 
   componentDidMount(){

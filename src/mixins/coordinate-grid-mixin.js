@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {compose, withProps} from '../utils'
 import colorMixin from './color-mixin'
 import marginMixin from './margin-mixin'
 import baseMixin from './base-mixin'
 
-const {any, array, arrayOf, bool, func, instanceOf, number, oneOfType, shape, string} = React.PropTypes
+const {any, array, arrayOf, bool, func, instanceOf, number, oneOfType, shape, string} = PropTypes
 
 const coordinateGridMixin = withProps({
   brushOn: bool,

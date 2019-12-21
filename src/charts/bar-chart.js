@@ -5,10 +5,9 @@ import coordinateGridMixin from '../mixins/coordinate-grid-mixin'
 import stackMixin from '../mixins/stack-mixin'
 import barMixin from '../mixins/bar-mixin'
 
-@barMixin
-@stackMixin
-@coordinateGridMixin
-export default class BarChart extends BaseChart{
+export default
+@barMixin @stackMixin @coordinateGridMixin
+class BarChart extends BaseChart{
   static displayName = 'BarChart'
 
   componentDidMount(){

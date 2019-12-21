@@ -1,12 +1,26 @@
 {
   "env": {
     "module": {
-      "presets": ["react"],
-      "plugins": ["transform-class-properties", "transform-decorators-legacy", "transform-object-rest-spread"]
+      "presets": ["@babel/preset-react"],
+      "plugins": [
+        [
+          "@babel/plugin-proposal-decorators",
+          { "decoratorsBeforeExport": false }
+        ],
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
     },
     "browser": {
-      "presets": ["es2015", "react"],
-      "plugins": ["transform-class-properties", "transform-decorators-legacy", "transform-object-rest-spread"]
+      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "plugins": [
+        [
+          "@babel/plugin-proposal-decorators",
+          { "decoratorsBeforeExport": false }
+        ],
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
     }
   }
 }

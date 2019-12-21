@@ -1,11 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {withProps} from '../utils'
 
+const {shape, number} = PropTypes
+
 export default withProps({
-  margins: React.PropTypes.shape({
-    left: React.PropTypes.number.isRequired,
-    right: React.PropTypes.number.isRequired,
-    top: React.PropTypes.number.isRequired,
-    bottom: React.PropTypes.number.isRequired
+  margins: shape({
+    left: number.isRequired,
+    right: number.isRequired,
+    top: number.isRequired,
+    bottom: number.isRequired
   })
 })

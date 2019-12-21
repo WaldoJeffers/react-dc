@@ -3,8 +3,9 @@ import dc from 'dc'
 import CompositeChart from './composite-chart'
 import seriesMixin from '../mixins/series-mixin'
 
+export default
 @seriesMixin
-export default class SeriesChart extends CompositeChart{
+class SeriesChart extends CompositeChart{
   static displayName = 'SeriesChart'
 
   componentDidMount(){

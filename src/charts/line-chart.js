@@ -1,16 +1,16 @@
 import React from 'react'
 import dc from 'dc'
+import PropTypes from 'prop-types'
 import BaseChart from './base-chart'
 import coordinateGridMixin from '../mixins/coordinate-grid-mixin'
 import stackMixin from '../mixins/stack-mixin'
 import lineMixin from '../mixins/line-mixin'
 
-const {arrayOf, bool, func, number, oneOfType, shape, string} = React.PropTypes
+const {arrayOf, bool, func, number, oneOfType, shape, string} = PropTypes
 
-@stackMixin
-@coordinateGridMixin
-@lineMixin
-export default class LineChart extends BaseChart{
+export default
+@stackMixin @coordinateGridMixin @lineMixin
+class LineChart extends BaseChart{
   static displayName = 'LineChart'
 
   componentDidMount(){
